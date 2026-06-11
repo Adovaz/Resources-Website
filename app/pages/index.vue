@@ -21,7 +21,8 @@ const { data: resources } = await useAsyncData('resources', () => {
           :title="resource.title",
           :description="resource?.description"
           :image="resource?.image"
-          :to="resource?.path"
+          :to="resource?.link"
+          target= '_blank'
           />
     </UPageGrid>
   </UPageSection>  

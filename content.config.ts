@@ -17,7 +17,7 @@ export default defineContentConfig({
       title: z.string(),
       description: z.string(),
       image: z.string(),
-      path: z.string()
+      link: z.string()
     })  
   })
   }
