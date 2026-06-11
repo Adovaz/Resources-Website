@@ -3,25 +3,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@nuxt/content',
-    'nuxt-studio'
+    '@nuxt/content'
   ],
-  studio: {
-  repository: {
-    provider: 'github', // 'github' or 'gitlab'
-    owner: 'Adovaz',
-    repo: 'Resources-Website',
-    branch: 'main'
-  }
-  },
-  nitro: {
-    prerender: {
-      // Pre-render the homepage
-      routes: ['/'],
-      // Then crawl all the links on the page
-      crawlLinks: true
-    }
-  },
   devtools: {
     enabled: true
   },
