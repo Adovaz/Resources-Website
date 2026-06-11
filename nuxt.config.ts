@@ -1,6 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@nuxt/content',
+    'nuxt-studio'
+  ],
+  studio: {
+  repository: {
+    provider: 'github', // 'github' or 'gitlab'
+    owner: 'Adovaz',
+    repo: 'Resources-Website',
+    branch: 'main'
+  }
+  },
 
   devtools: {
     enabled: true
