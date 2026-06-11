@@ -26,13 +26,7 @@ useSeoMeta({
 
 <template>
   <UApp>
-    <UHeader>
-      <template #left>
-        <NuxtLink to="/">
-          <div class = "text-lg font-bold">Resources</div>
-        </NuxtLink>
-      </template>
-
+    <UHeader title="Resources" :toggle="false">
       <template #right>
         <UColorModeButton />
       </template>
@@ -53,10 +47,10 @@ useSeoMeta({
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="mailto:avery@zavoda.nz"
           target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
+          icon="i-simple-icons-gmail"
+          aria-label="Email"
           color="neutral"
           variant="ghost"
         />
