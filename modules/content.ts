@@ -4,5 +4,5 @@ export default defineNuxtModule({
   meta: {
     name: 'content'
   },
-  setup () {}
+  setup() {}
 })

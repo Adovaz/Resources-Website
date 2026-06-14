@@ -22,12 +22,49 @@ useSeoMeta({
   ogImage: '',
   twitterCard: ''
 })
+
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('pages'))
+
+const { data: resources } = await useAsyncData('resources', () => queryCollection('resources').all())
+
+const defaultLinks = computed(() => {
+  return resources.value?.map(item => ({
+    id: item.id,
+    label: item.title,
+    suffix: item.description,
+    to: item.link,
+    icon: 'i-heroicons-link'
+  })) || []
+})
+
+const { search, status, init } = useSearchCollection(['pages', 'resources'], {
+  immediate: false
+})
+
+const { open } = useContentSearch()
+
+watch(open, (value) => {
+  if (value && status.value === 'idle') init()
+})
 </script>
 
 <template>
   <UApp>
-    <UHeader title="Resources" :toggle="false">
+    <ClientOnly>
+      <LazyUContentSearch
+        :navigation="navigation"
+        :search="search"
+        :search-status="status"
+        :links="defaultLinks"
+      />
+    </ClientOnly>
+
+    <UHeader
+      title="Resources"
+      :toggle="false"
+    >
       <template #right>
+        <UContentSearchButton />
         <UColorModeButton />
       </template>
     </UHeader>
@@ -36,7 +73,7 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <USeparator/>
+    <USeparator />
 
     <UFooter>
       <template #left>

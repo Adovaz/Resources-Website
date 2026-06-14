@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { BlogPostProps } from '@nuxt/ui'
 const { data: page } = await useAsyncData('index', () => {
   return queryCollection('index').first()
 })
@@ -14,17 +13,18 @@ const { data: resources } = await useAsyncData('resources', () => {
       :title="page?.title"
       :description="page?.description"
     />
-  </div>
-  <UPageSection>
-    <UPageGrid>
-          <UBlogPost v-for="(resource) in resources"
-          :title="resource.title",
+
+    <UPageSection>
+      <UPageGrid>
+        <UBlogPost
+          v-for="(resource) in resources"
+          :title="resource.title"
           :description="resource?.description"
           :image="resource?.image"
           :to="resource?.link"
-          target= '_blank'
-          />
-    </UPageGrid>
-  </UPageSection>  
-  
+          target="_blank"
+        />
+      </UPageGrid>
+    </UPageSection>
+  </div>
 </template>

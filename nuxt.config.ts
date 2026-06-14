@@ -9,14 +9,14 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-  studio: {
-    repository: {
-      provider: 'github', // 'github' or 'gitlab'
-      owner: 'Adovaz',
-      repo: 'Resources-Website',
-      branch: 'master'
-    }
+
+  css: ['~/assets/css/main.css'],
+
+  routeRules: {
+    '/': { prerender: true }
   },
+
+  compatibilityDate: '2025-01-15',
   nitro: {
     prerender: {
       // Pre-render the homepage
@@ -26,20 +26,20 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/css/main.css'],
-
-  routeRules: {
-    '/': { prerender: true }
-  },
-
-  compatibilityDate: '2025-01-15',
-
   eslint: {
     config: {
       stylistic: {
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+  studio: {
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'Adovaz',
+      repo: 'Resources-Website',
+      branch: 'master'
     }
   }
 })

@@ -1,0 +1,75 @@
+// Folder-specific settings
+//
+// For a full list of overridable settings, and general information on folder-specific settings,
+// see the documentation: https://zed.dev/docs/configuring-zed#settings-files
+{
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "configFile": ".nuxt/eslint.config.mjs"
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": [
+          "class",
+          "ui"
+        ],
+        "classFunctions": ["defineAppConfig"]
+      }
+    }
+  },
+  "languages": {
+    "CSS": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "!vscode-css-language-server"
+      ]
+    },
+    "JavaScript": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "Vue.js": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "HTML": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "Markdown": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "JSON": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "JSONC": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "YAML": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    },
+    "TOML": {
+      "formatter": {
+        "code_action": "source.fixAll.eslint"
+      }
+    }
+  }
+}
