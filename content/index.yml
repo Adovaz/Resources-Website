@@ -1,2 +1,23 @@
 title: Resources
 description: Hosted resources for gender affirming healthcare.
+resources:
+  - title: Aotearoa Guidelines
+    description: Guidelines for Gender Affirming Healthcare in Aotearoa New Zealand 2025 Edition
+    image: /img/aotearoa-guidelines-2025.png
+    file: /pdf/aotearoa-guidelines-2025.pdf
+  - title: Primary Care Guidelines
+    description: Primary care gender affirming hormone therapy initiation guidelines
+    image: /img/primary-care-guidelines.png
+    file: /pdf/primary-care-guidelines.pdf
+  - title: Primary Care Guidelines
+    description: Primary care gender affirming hormone therapy initiation guidelines
+    image: /img/primary-care-guidelines.png
+    file: /pdf/primary-care-guidelines.pdf
+  - title: WPATH Standards of Care 8
+    description: The Standards of Care from the World Professional Association for Transgender Health
+    image: /img/international-journal-of-transgender-health.png
+    file: /pdf/standards-of-care-8.pdf
+  - title: Aotearoa Guidelines 2018
+    description: Guidelines for Gender Affirming Healthcare in Aotearoa New Zealand 2018 Edition
+    image: /img/aotearoa-guidelines-2018.png
+    file: /pdf/aotearoa-guidelines-2018.pdf

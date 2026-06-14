@@ -1,9 +1,6 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => {
-  return queryCollection('index').first()
-})
-const { data: resources } = await useAsyncData('resources', () => {
-  return queryCollection('resources').all()
+const { data: page } = await useAsyncData(() => {
+  return queryCollection('content').path('/').first()
 })
 </script>
 
@@ -13,15 +10,15 @@ const { data: resources } = await useAsyncData('resources', () => {
       :title="page?.title"
       :description="page?.description"
     />
-    <UPageSection>
+    <UPageSection v-if="page?.resources">
       <UPageGrid>
         <UBlogPost
-          v-for="resource in resources"
-          :key="resource.id"
+          v-for="(resource, i) in page.resources"
+          :key="i"
           :title="resource.title"
-          :description="resource?.description"
-          :image="resource?.image"
-          :to="resource?.link"
+          :description="resource.description"
+          :image="resource.image"
+          :to="resource.file"
           target="_blank"
         />
       </UPageGrid>
