@@ -1,41 +1,48 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/content", "nuxt-studio"],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content', 'nuxt-studio'],
   devtools: {
-    enabled: false,
+    enabled: true
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
 
   routeRules: {
-    "/": { prerender: true },
+    '/': { prerender: true }
   },
 
-  compatibilityDate: "2025-01-15",
+  compatibilityDate: '2025-01-15',
   nitro: {
     prerender: {
       // Pre-render the homepage
-      routes: ["/"],
+      routes: ['/'],
       // Then crawl all the links on the page
-      crawlLinks: true,
+      crawlLinks: true
     },
+
+    preset: 'cloudflare_module',
+
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true
+    }
   },
 
   eslint: {
     config: {
       stylistic: {
-        commaDangle: "never",
-        braceStyle: "1tbs",
-      },
-    },
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
   },
 
   studio: {
     repository: {
-      provider: "github", // 'github' or 'gitlab'
-      owner: "Adovaz",
-      repo: "Resources-Website",
-      branch: "master",
-    },
-  },
-});
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'Adovaz',
+      repo: 'Resources-Website',
+      branch: 'master'
+    }
+  }
+})
