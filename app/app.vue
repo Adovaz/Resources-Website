@@ -18,7 +18,7 @@ useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description,
+  ogDescription: description
 })
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('pages'))

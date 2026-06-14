@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/content', 'nuxt-studio'],
+
+  ssr: false,
   devtools: {
     enabled: true
   },
@@ -11,9 +13,7 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
-
-
-  compatibilityDate: "2025-01-15",
+  compatibilityDate: '2025-01-15',
   nitro: {
     prerender: {
       // Pre-render the homepage
@@ -29,8 +29,6 @@ export default defineNuxtConfig({
       nodeCompat: true
     }
   },
-
-  ssr: false,
 
   eslint: {
     config: {
