@@ -8,15 +8,16 @@ const { data: resources } = await useAsyncData('resources', () => {
 </script>
 
 <template>
+  <div>
     <UPageHero
       :title="page?.title"
       :description="page?.description"
     />
-
     <UPageSection>
       <UPageGrid>
         <UBlogPost
-          v-for="(resource) in resources"
+          v-for="resource in resources"
+          :key="resource.id"
           :title="resource.title"
           :description="resource?.description"
           :image="resource?.image"
@@ -25,4 +26,5 @@ const { data: resources } = await useAsyncData('resources', () => {
         />
       </UPageGrid>
     </UPageSection>
+  </div>
 </template>
