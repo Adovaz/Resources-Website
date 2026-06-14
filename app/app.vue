@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+import type { ContentSearchLink } from '@nuxt/ui/runtime/components/content/ContentSearch.vue.js'
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -11,49 +13,38 @@ useHead({
   }
 })
 
-const title = 'Resources'
-const description = 'Resources for Gender Affirming Healthcare'
+const route = useRoute()
+const { data: page } = await useAsyncData(route.path, () => {
+  return queryCollection('content').path(route.path).first()
+})
 
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description
+  title: page.value?.title,
+  description: page.value?.description,
+  ogTitle: page.value?.title,
+  ogDescription: page.value?.description
 })
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('pages'))
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('content'))
 
-const { data: resources } = await useAsyncData('resources', () => queryCollection('resources').all())
+const links = computed <ContentSearchLink[]> (() =>
+  page.value?.resources.map(resource => ({
+    label: resource.title,
+    description: resource.description,
+    icon: 'i-lucide-file-text',
 
-const defaultLinks = computed(() => {
-  return resources.value?.map(item => ({
-    id: item.id,
-    label: item.title,
-    suffix: item.description,
-    to: item.link,
-    icon: 'i-heroicons-link'
-  })) || []
-})
-
-const { search, status, init } = useSearchCollection(['pages', 'resources'], {
-  immediate: false
-})
-
-const { open } = useContentSearch()
-
-watch(open, (value) => {
-  if (value && status.value === 'idle') init()
-})
+    to: resource.file,
+    external: true // Required so that PDFs open correctly.
+  })) ?? []
+)
 </script>
 
 <template>
   <UApp>
     <ClientOnly>
       <LazyUContentSearch
-        :navigation="navigation"
-        :search="search"
-        :search-status="status"
-        :links="defaultLinks"
+        :navigation
+        :links
       />
     </ClientOnly>
 
