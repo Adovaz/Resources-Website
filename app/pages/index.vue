@@ -8,22 +8,21 @@ const { data: resources } = await useAsyncData('resources', () => {
 </script>
 
 <template>
-  <UPageHero
-    :title="page?.title"
-    :description="page?.description"
-  />
+    <UPageHero
+      :title="page?.title"
+      :description="page?.description"
+    />
 
-  <UPageSection>
-    <UPageGrid>
-      <UBlogPost
-      <img :src=resource?.image :alt=resource.title clas
-        v-for="(resource) in resources"
-        :title="resource.title"
-        :description="resource?.description"
-        :image="resource?.image"
-        :to="resource?.link"
-        target="_blank"
-      />
-    </UPageGrid>
-  </UPageSection>
+    <UPageSection>
+      <UPageGrid>
+        <UBlogPost
+          v-for="(resource) in resources"
+          :title="resource.title"
+          :description="resource?.description"
+          :image="resource?.image"
+          :to="resource?.link"
+          target="_blank"
+        />
+      </UPageGrid>
+    </UPageSection>
 </template>
