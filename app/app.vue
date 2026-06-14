@@ -19,8 +19,6 @@ useSeoMeta({
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: '',
-  twitterCard: ''
 })
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('pages'))
