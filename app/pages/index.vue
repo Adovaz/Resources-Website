@@ -19,6 +19,7 @@ const { data: page } = await useAsyncData(() => {
           :description="resource.description"
           :image="resource.image"
           :to="resource.file"
+          variant="soft"
           external
         />
       </UPageGrid>
