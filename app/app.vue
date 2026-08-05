@@ -67,7 +67,7 @@ const links = computed <ContentSearchLink[]> (() =>
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          Built with Nuxt UI • © Avery Zavoda {{ new Date().getFullYear() }}
         </p>
       </template>
 
