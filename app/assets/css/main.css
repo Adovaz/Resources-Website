@@ -15,4 +15,42 @@
   --color-blue-ribbon-800: #1740b6;
   --color-blue-ribbon-900: #193a8f;
   --color-blue-ribbon-950: #142557;
+
+  --color-obsidian-50: #F2F2F2;
+  --color-obsidian-100: #E6E6E6;
+  --color-obsidian-200: #CCCCCC;
+  --color-obsidian-300: #B3B3B3;
+  --color-obsidian-400: #999999;
+  --color-obsidian-500: #808080;
+  --color-obsidian-600: #666666;
+  --color-obsidian-700: #4D4D4D;
+  --color-obsidian-800: #333333;
+  --color-obsidian-900: #1A1A1A;
+  --color-obsidian-950: #121212;
+
+  --color-thistle-50: #FEFCFD;
+  --color-thistle-100: #F7EBF5;
+  --color-thistle-200: #F1DBED;
+  --color-thistle-300: #EACAE5;
+  --color-thistle-400: #DAB4D4;
+  --color-thistle-500: #BE9DB9;
+  --color-thistle-600: #A3869E;
+  --color-thistle-700: #877084;
+  --color-thistle-800: #6C5969;
+  --color-thistle-900: #50424E;
+  --color-thistle-950: #352B33;
+
+
+  --color-crimson-50: #fde8ec;
+  --color-crimson-100: #fbd0d9;
+  --color-crimson-200: #f6a2b3;
+  --color-crimson-300: #f2738c;
+  --color-crimson-400: #ee4466;
+  --color-crimson-500: #e91640;
+  --color-crimson-600: #bb1133;
+  --color-crimson-700: #8c0d26;
+  --color-crimson-800: #5d091a;
+  --color-crimson-900: #2f040d;
+  --color-crimson-950: #210309;
+  
 }
